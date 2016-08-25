@@ -11,6 +11,7 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
+        <header-file src="src/ios/OpenFileHandler.h" />
         <source-file src="src/ios/OpenFileHandler.m" />
     </platform>
 </plugin>
