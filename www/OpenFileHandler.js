@@ -1,5 +1,8 @@
-var exec = require('cordova/exec');
-
-exports.coolMethod = function(arg0, success, error) {
-    //exec(success, error, "OpenFileHandler", "coolMethod", [arg0]);
+var OpenFileHandler = function() {
 };
+
+OpenFileHandler.prototype.registerForFileOpenNotification = function(successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, "PushPlugin", "register");
+}
+
+module.exports = OpenFileHandler;

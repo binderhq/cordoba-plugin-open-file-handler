@@ -13,5 +13,7 @@
         </config-file>
         <header-file src="src/ios/AppDelegate+OpenFileHandler.h" />
         <source-file src="src/ios/AppDelegate+OpenFileHandler.m" />
+        <header-file src="src/ios/OpenFileHandler.h" />
+        <source-file src="src/ios/OpenFileHandler.m" />
     </platform>
 </plugin>
