@@ -5,9 +5,9 @@
 #include "TargetConditionals.h"
 
 #import <Cordova/CDV.h>
-#import "OpenFileHandler.h"
+#import "AppDelegate+OpenFileHandler.h"
 
-@implementation OpenFileHandler
+@implementation AppDelegate (notification)
 
 - (BOOL) application:(UIApplication *)application openURL:(NSURL *) url sourceApplication:(NSString *) sourceApplication annotation:(id) annotation
 {
