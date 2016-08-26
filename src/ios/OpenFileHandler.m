@@ -2,20 +2,15 @@
 
 @implementation OpenFileHandler
 
-@synthesize callbackId;
-@synthesize notificationCallbackId;
-@synthesize callback;
+@synthesize filename;
 
-- (void)notifyFileOpened:(CDVInvokedUrlCommand*)command {
-    NSLog(@"File opened via default file handler");
-
-    NSString * jsCallBack = [NSString stringWithFormat:@"alert('File opened via default file handler'');"];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
+- (void)notifyFileOpened:(NSURL*)fileUrl {
+    
+    self.filename = fileUrl.path;
 }
 
-- (void)register:(CDVInvokedUrlCommand*)command;
-{
-    self.callbackId = command.callbackId;
+- (void)checkForOpenedFile:(CDVInvokedUrlCommand*)command {
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:self.filename];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
-
 @end

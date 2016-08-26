@@ -1,8 +1,8 @@
 var OpenFileHandler = function() {
 };
 
-OpenFileHandler.prototype.registerForFileOpenNotification = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "PushPlugin", "register");
+OpenFileHandler.prototype.checkForOpenedFile = function(successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, "PushPlugin", "checkForOpenedFile");
 }
 
 module.exports = OpenFileHandler;

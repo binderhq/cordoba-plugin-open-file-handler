@@ -2,17 +2,14 @@
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface ClientCertificate : CDVPlugin
+@interface OpenFileHandler : CDVPlugin
 {
-    NSString *notificationCallbackId;
-    NSString *callback;
+    NSString *filename;
 }
 
-@property (nonatomic, copy) NSString *callbackId;
-@property (nonatomic, copy) NSString *notificationCallbackId;
-@property (nonatomic, copy) NSString *callback;
+@property (nonatomic, copy) NSString *filename;
 
-- (void)registerCallback:(CDVInvokedUrlCommand*)command;
-- (void)notifyFileOpened;
+- (void)notifyFileOpened:(NSURL*)fileUrl;
+- (void)checkForOpenedFile:(CDVInvokedUrlCommand*)command;
 
 @end
