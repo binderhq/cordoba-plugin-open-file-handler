@@ -1,8 +1,5 @@
-var OpenFileHandler = function() {
+var exec = require('cordova/exec');
+
+exports.checkForOpenedFile = function(success, error) {
+    exec(success, error, "OpenFileHandler", "checkForOpenedFile");
 };
-
-OpenFileHandler.prototype.checkForOpenedFile = function(successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "PushPlugin", "checkForOpenedFile");
-}
-
-module.exports = OpenFileHandler;
